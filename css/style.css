@@ -12,7 +12,6 @@ a{
   font-size:20px;
   text-decoration:none;
 }
-image{
-  length:50px;
-    
+img{
+  margin:0 0 50px 50px;
 }
