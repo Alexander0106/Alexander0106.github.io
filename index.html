@@ -54,6 +54,17 @@
               </div>
             </div>
           </div>
+          <input id="one-checkbox" type="checkbox" value="You are ">This is a good website.
+          <button id="button">Comment about your comment</button>
+          <script>
+            $("body").on("click","#button", function(){
+              if( $("#one-checkbox").prop("checked") ){
+                alert($("#one-checkbox").val()+"wrong. This website is crap.");
+              } else {
+                alert($("#one-checkbox").val()+"right. This website is crap.");
+              }
+            });
+          </script>
         </div>
         <div class="col-md-2"></div>
       </div>
