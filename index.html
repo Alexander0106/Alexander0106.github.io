@@ -16,7 +16,7 @@
         Your age:<input id="age" type="text">
         <button id="hello">Hello</button>
         <script>
-          $("#hello").on('click',function(){alert("Hello, the "+$("age").val()+"-year-old "+$("name").val()+".")})
+          $("#hello").on('click',function(){alert("Hello, the "+$("#age").val()+"-year-old "+$("#name").val()+".")})
         </script>
         <br>
         <li class="dropdown">
