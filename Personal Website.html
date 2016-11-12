@@ -9,6 +9,9 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("Data Base");
       var studentCollection = db.collection('students');
+      studentCollection.load();
+      setTimeout(function(){
+      },1000);
     </script>
   </body>
 </html>
