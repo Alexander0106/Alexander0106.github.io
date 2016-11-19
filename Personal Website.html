@@ -14,10 +14,6 @@
         </tr>
       </thead>
       <tbody id="students">
-        <tr>
-          <td>1</td>
-          <td>Orange</td>
-        </tr>
       </tbody>
     </table>
     <script type="text/javascript" src="js/fdb-all.min.js"></script>
@@ -35,7 +31,7 @@
       setTimeout(function(){
         var students=studentCollection.find();
         for(var i=0;i<students.length;i++){
-          var id=students[i],_id;
+          var id=students[i]._id;
           var name=students[i].name;
           $("#students").append("<tr><td>"+id+"</td><td>"+name+"</td></tr>")
         };
