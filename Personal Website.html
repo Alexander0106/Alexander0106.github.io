@@ -27,10 +27,17 @@
       for(var i=0;i<100;i++){
         studentCollection.insert({
           name:Math.random().toString(32).slice(2),
-          
-        })
-      }
+          age:Math.floor(Math.random()*100+1)
+        });
+      };
       studentCollection.load();
+      $("#students").append("<tr><td>"+id+"</td><td>"+name+"</td></tr>")
+      setTimeout(function(){
+        var students=studentCollection.find();
+        for(var i=0;i<students.length;i++){
+          console.log(students[i].name);
+        };
+      },500);
     </script>
   </body>
 </html>
