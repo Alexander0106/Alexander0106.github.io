@@ -31,11 +31,12 @@
         });
       };
       studentCollection.load();
-      $("#students").append("<tr><td>"+id+"</td><td>"+name+"</td></tr>")
       setTimeout(function(){
         var students=studentCollection.find();
         for(var i=0;i<students.length;i++){
-          console.log(students[i].name);
+          var id=students[i],_id;
+          var name=students[i].name;
+          $("#students").append("<tr><td>"+id+"</td><td>"+name+"</td></tr>")
         };
       },500);
     </script>
