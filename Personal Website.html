@@ -46,7 +46,11 @@
       };
       studentCollection.load();
       function showModal(){
-        $(".modal-body").text($($(this).find("td")[0]).text());
+        var aaa=$($(this).find("td")[0]).text();
+        var student=studentCollection.find({
+          _id:aaa
+        })[0];
+        $(".modal-body").text("Age:"+student.age);
         $("#myModal").modal('show');
       }
       $("#students").on("click","tr",showModal);
