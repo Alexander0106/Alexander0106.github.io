@@ -5,13 +5,6 @@
   </head>
   <body>
     <h1>The Data Base</h1>
-    <script type="text/javascript" src="js/fdb-all.min.js"></script>
-    <script type="text/javascript">
-      var fdb = new ForerunnerDB();
-      var db = fdb.db("mydb");
-      var studentCollection = db.collection('students');
-      studentCollection.load();
-    </script>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -19,12 +12,25 @@
           <td>Name</td>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="students">
         <tr>
           <td>1</td>
           <td>Orange</td>
         </tr>
       </tbody>
     </table>
+    <script type="text/javascript" src="js/fdb-all.min.js"></script>
+    <script type="text/javascript">
+      var fdb = new ForerunnerDB();
+      var db = fdb.db("mydb");
+      var studentCollection = db.collection('students');
+      for(var i=0;i<100;i++){
+        studentCollection.insert({
+          name:Math.random().toString(32).slice(2),
+          
+        })
+      }
+      studentCollection.load();
+    </script>
   </body>
 </html>
