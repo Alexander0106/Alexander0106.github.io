@@ -1,17 +1,30 @@
 <html>
   <head>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <title>Data Base</title>
   </head>
   <body>
-    <h1>Hello</h1>
+    <h1>The Data Base</h1>
     <script type="text/javascript" src="js/fdb-all.min.js"></script>
     <script type="text/javascript">
       var fdb = new ForerunnerDB();
-      var db = fdb.db("Data Base");
+      var db = fdb.db("mydb");
       var studentCollection = db.collection('students');
       studentCollection.load();
-      setTimeout(function(){
-      },1000);
     </script>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Name</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Orange</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
