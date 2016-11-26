@@ -57,15 +57,15 @@
             </div>
           </div>
           <br>
-          <input id="one-checkbox" type="checkbox" value="You are "> This is a good website.
+          <input id="one-checkbox" type="checkbox" value="This website is crap."> This is a good website.
           <br>
           <button id="button">Comment about your comment</button>
           <script>
             $("body").on("click","#button", function(){
               if( $("#one-checkbox").prop("checked") ){
-                alert($("#one-checkbox").val()+"wrong. This website is crap.");
+                alert("You are wrong. "$("#one-checkbox").val());
               } else {
-                alert($("#one-checkbox").val()+"right. This website is crap.");
+                alert("You are right. "$("#one-checkbox").val());
               }
             });
           </script>
