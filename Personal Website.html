@@ -56,6 +56,8 @@
         console.log(newStudent);
         studentCollection.insert(newStudent);
         studentCollection.save();
+        var student=studentCollection.find(newStudent)[0];
+        $("#students").append("<tr><td>"+student.id+"</td><td>"+student.name+"</td></tr>")
       });
     </script>
     </p>
