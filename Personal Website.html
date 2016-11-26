@@ -12,7 +12,7 @@
     <br>
     Age: <input id="age" type="text">
     <br>
-    Sex: <input type="radio" name="sex" value="male"> Male <input type="radio" name="sex" value="female"> Female
+    Sex: <input id="male" type="radio" name="sex" value="male"> Male <input id="female" type="radio" name="sex" value="female"> Female
     <br>
     Height: <input id="height" type="text">
     <br>
@@ -27,18 +27,23 @@
     <br>
     <button id="button">Submit</button>
     <script>
+      if( $("#male").prop("checked") ){
+        var a=male;
+      }
+      if( $("#female").prop("checked") ){
+        var a=female;
+      }
       $("#button").click(function(){
         var newStudent={
           name:$("#name").val(),
           age:$("#age").val(),
-          sex:
+          sex:a,
           height:$("#height").val(),
           weight:$("#weight").val(),
           occupation:$("#occupation").val(),
           telephone:$("#telephone").val(),
           email:$("#email").val()
         };
-        console.log(newStudent);
         studentCollection.insert(newStudent);
         studentCollection.save();
       });
