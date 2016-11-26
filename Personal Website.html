@@ -37,7 +37,9 @@
           telephone:$("#telephone").val(),
           email:$("#email").val()
         };
+        console.log(newstudent);
         studentCollection.insert(newStudent);
+        studentCollection.save();
       });
     </script>
     </p>
