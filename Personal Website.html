@@ -37,13 +37,22 @@
         var newStudent={
           name:$("#name").val(),
           age:$("#age").val(),
-          sex:"a",
+          sex:a,
           height:$("#height").val(),
           weight:$("#weight").val(),
           occupation:$("#occupation").val(),
           telephone:$("#telephone").val(),
           email:$("#email").val()
         };
+        $("#name").val("");
+        $("#age").val("");
+        $("#male").val("");
+        $("#female").val("");
+        $("#height").val("");
+        $("#weight").val("");
+        $("#occupation").val("");
+        $("#telephone").val("");
+        $("#email").val("");
         console.log(newStudent);
         studentCollection.insert(newStudent);
         studentCollection.save();
