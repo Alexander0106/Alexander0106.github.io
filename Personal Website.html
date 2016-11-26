@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>The Data Base</h1>
-    <p text-align:center>
+    <p>
     Name: <input id="name" type="text">
     <br>
     Age: <input id="age" type="text">
@@ -19,6 +19,26 @@
     Weight: <input id="weight" type="text">
     <br>
     Occupation: <input id="occupation" type="text">
+    <br>
+    Telephone: <input id="telephone" type="text">
+    <br>
+    E-mail: <input id="email" type="text">
+    <button id="button">Submit</button>
+    <script>
+      $("body").on("click","#button",function(){
+        var newStudent={
+          name:$("#name").val(),
+          age:$("#age").val(),
+          sex:$("sex").val(),
+          height:$("#height").val(),
+          weight:$("#weight").val(),
+          occupation:$("#occupation").val(),
+          telephone:$("#telephone").val(),
+          email:$("#email").val()
+        };
+        studentCollection.insert(newStudent);
+      });
+    </script>
     </p>
     <table class="table table-bordered">
       <thead>
