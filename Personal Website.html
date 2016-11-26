@@ -105,7 +105,7 @@
         var student=studentCollection.find({
           _id:aaa
         })[0];
-        $(".modal-body").text("Age:"+student.age);
+        $(".modal-body").html("Age:"+student.age<br>"Sex:"+student.sex<br>"Height:"+student.height<br>"Weight:"+student.weight<br>"Occupation:"+student.occupation<br>"Telephone:"+student.telephone<br>"E-mail:"+student.email);
         $("#myModal").modal('show');
       }
       $("#students").on("click","tr",showModal);
