@@ -44,6 +44,7 @@
           telephone:$("#telephone").val(),
           email:$("#email").val()
         };
+        console.log(newStudent);
         studentCollection.insert(newStudent);
         studentCollection.save();
       });
