@@ -70,15 +70,7 @@
             <h4 class="modal-title" id="myModalLabel">Modal title</h4>
           </div>
           <div class="modal-body">
-            <script>
-              "Age:"+student.age
-              "Sex:"+student.sex
-              "Height:"+student.height
-              "Weight:"+student.weight
-              "Occupation:"+student.occupation
-              "Telephone:"+student.telephone
-              "E-mail:"+student.email
-            </script>
+            ...
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -100,11 +92,11 @@
       };
       studentCollection.load();
       function showModal(){
-        var aaa=$($(this).find("td")[0]).text();
+        var aaa=$(this).attr('data-id');
         var student=studentCollection.find({
           _id:aaa
         })[0];
-        $(".modal-body").html();
+        $(".modal-body").text();
         $("#myModal").modal('show');
       }
       $("#students").on("click","tr",showModal);
@@ -113,7 +105,7 @@
         for(var i=0;i<students.length;i++){
           var id=students[i]._id;
           var name=students[i].name;
-          $("#students").append("<tr><td>"+id+"</td><td>"+name+"</td></tr>")
+          $("#students").append("<tr data-id='"+_id+"'><td>"+id+"</td><td>"+name+"</td></tr>")
         };
       },500);
     </script>
