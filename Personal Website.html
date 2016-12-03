@@ -69,9 +69,7 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel">Modal title</h4>
           </div>
-          <div class="modal-body">
-            
-          </div>
+          <div class="modal-body"></div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
@@ -84,19 +82,13 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("mydb");
       var studentCollection = db.collection('students');
-      for(var i=0;i<100;i++){
-        studentCollection.insert({
-          name:Math.random().toString(32).slice(2),
-          age:Math.floor(Math.random()*100+1)
-        });
-      };
       studentCollection.load();
       function showModal(){
         var aaa=$(this).attr('data-id');
         var student=studentCollection.find({
           _id:aaa
         })[0];
-        $(".modal-body").text("Age:"+student.age);
+        $(".modal-body").text();
         $("#myModal").modal('show');
       }
       $("#students").on("click","tr",showModal);
