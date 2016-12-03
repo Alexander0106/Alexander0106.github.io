@@ -57,6 +57,7 @@
         <tr>
           <td>Id</td>
           <td>Name</td>
+          <td>Control</td>
         </tr>
       </thead>
       <tbody id="students">
@@ -92,12 +93,15 @@
         $("#myModal").modal('show');
       }
       $("#students").on("click","tr",showModal);
+      $("#students").on("click",".js-delete-button",function(){
+        
+      })
       setTimeout(function(){
         var students=studentCollection.find();
         for(var i=0;i<students.length;i++){
           var id=students[i]._id;
           var name=students[i].name;
-          $("#students").append("<tr data-id:'"+id+"'><td>"+id+"</td><td>"+name+"</td></tr>")
+          $("#students").append("<tr data-id='"+_id+"'><td>"+id+"</td><td>"+name+"</td><td><button class='js-delete-button'>Delete</button></td></tr>")
         };
       },500);
     </script>
