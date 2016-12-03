@@ -94,8 +94,9 @@
           $("#myModal").modal('show');
         }else{
           var name = $($(this).find("td")[0]).text();
+          console.log(name)
           studentCollection.remove({
-            name: name
+            _id: name
           });
           studentCollection.save();
           $(this).remove();
