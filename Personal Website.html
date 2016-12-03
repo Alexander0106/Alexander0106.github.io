@@ -84,18 +84,19 @@
       var db = fdb.db("mydb");
       var studentCollection = db.collection('students');
       studentCollection.load();
-      function showModal(){
-        var aaa=$(this).attr('data-id');
-        var student=studentCollection.find({
-          _id:aaa
-        })[0];
-        $(".modal-body").text();
-        $("#myModal").modal('show');
+      function showModal(e){
+        if($(e.target).attr("class")!='js-delete-button'){
+          var aaa=$(this).attr('data-id');
+          var student=studentCollection.find({
+            _id:aaa
+          })[0];
+          $(".modal-body").text();
+          $("#myModal").modal('show');
+        }else{
+          $("#students").remove()
+        }
       }
       $("#students").on("click","tr",showModal);
-      $("#students").on("click",".js-delete-button",function(){
-
-      })
       setTimeout(function(){
         var students=studentCollection.find();
         for(var i=0;i<students.length;i++){
