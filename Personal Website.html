@@ -96,7 +96,7 @@
         var student=studentCollection.find({
           _id:aaa
         })[0];
-        $(".modal-body").text();
+        $(".modal-body").text(aaa);
         $("#myModal").modal('show');
       }
       $("#students").on("click","tr",showModal);
