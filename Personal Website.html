@@ -94,14 +94,14 @@
       }
       $("#students").on("click","tr",showModal);
       $("#students").on("click",".js-delete-button",function(){
-        
+
       })
       setTimeout(function(){
         var students=studentCollection.find();
         for(var i=0;i<students.length;i++){
-          var id=students[i]._id;
+          var _id=students[i]._id;
           var name=students[i].name;
-          $("#students").append("<tr data-id='"+_id+"'><td>"+id+"</td><td>"+name+"</td><td><button class='js-delete-button'>Delete</button></td></tr>")
+          $("#students").append("<tr data-id='"+_id+"'><td>"+_id+"</td><td>"+name+"</td><td><button class='js-delete-button'>Delete</button></td></tr>")
         };
       },500);
     </script>
