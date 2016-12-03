@@ -27,17 +27,10 @@
     <br>
     <button id="button">Submit</button>
     <script>
-      if( $("#male").prop("checked") ){
-        var a=male;
-      }
-      if( $("#female").prop("checked") ){
-        var a=female;
-      }
       $("#button").click(function(){
         var newStudent={
           name:$("#name").val(),
           age:$("#age").val(),
-          sex:a,
           height:$("#height").val(),
           weight:$("#weight").val(),
           occupation:$("#occupation").val(),
@@ -46,8 +39,6 @@
         };
         $("#name").val("");
         $("#age").val("");
-        $("#male").val("");
-        $("#female").val("");
         $("#height").val("");
         $("#weight").val("");
         $("#occupation").val("");
