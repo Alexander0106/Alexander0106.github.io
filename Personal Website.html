@@ -48,7 +48,7 @@
         studentCollection.insert(newStudent);
         studentCollection.save();
         var student=studentCollection.find(newStudent)[0];
-        $("#students").append("<tr><td>"+student.id+"</td><td>"+student.name+"</td></tr>")
+        $("#students").append("<tr><td>"+student._id+"</td><td>"+student.name+"</td></tr>")
       });
     </script>
     </p>
@@ -97,7 +97,7 @@
         for(var i=0;i<students.length;i++){
           var id=students[i]._id;
           var name=students[i].name;
-          $("#students").append("<tr data-id='"+id+"'><td>"+id+"</td><td>"+name+"</td></tr>")
+          $("#students").append("<tr data-id:'"+id+"'><td>"+id+"</td><td>"+name+"</td></tr>")
         };
       },500);
     </script>
