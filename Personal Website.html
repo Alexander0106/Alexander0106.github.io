@@ -93,7 +93,12 @@
           $(".modal-body").text();
           $("#myModal").modal('show');
         }else{
-          
+          var name = $($(this).find("td")[0]).text();
+          studentCollection.remove({
+            name: name
+          });
+          studentCollection.save();
+          $(this).remove();
         }
       }
       $("#students").on("click","tr",showModal);
