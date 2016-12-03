@@ -70,7 +70,7 @@
             <h4 class="modal-title" id="myModalLabel">Modal title</h4>
           </div>
           <div class="modal-body">
-            ...
+            aaa
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -96,7 +96,7 @@
         var student=studentCollection.find({
           _id:aaa
         })[0];
-        $(".modal-body").text(aaa);
+        $(".modal-body").text();
         $("#myModal").modal('show');
       }
       $("#students").on("click","tr",showModal);
