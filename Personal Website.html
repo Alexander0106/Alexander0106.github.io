@@ -101,7 +101,7 @@
         }
       }
       function createString(id,name){
-        return "<tr data-id='"+id+"'><td>"+id+"</td><td>"+name+"</td><td><button class='js-delete-button'>Delete</button></td></tr>";
+        return "<tr data-id='"+id+"'><td>"+id+"</td><td>"+name+"</td><td><button class='js-delete-button'>Delete</button><button class='js-change-button'>Change</button></td></tr>";
       }
       $("#students").on("click","tr",showModal);
       setTimeout(function(){
