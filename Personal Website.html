@@ -101,23 +101,23 @@
       studentCollection.load();
       function showModal(e){
         if($(e.target).attr("class")!='js-delete-button'){
-          var aaa=$(this).attr('data-id');
-          var student=studentCollection.find({
-            _id:aaa
-          })[0];
-          $("#myModal .modal-body").text();
-          $("#myModal").modal('show');
-        }else{
           if($(e.target).attr("class")!='js-change-button'){
-            var name = $($(this).find("td")[0]).text();
-            studentCollection.remove({
-              _id: name
-            });
-            studentCollection.save();
-            $(this).remove();
+            var aaa=$(this).attr('data-id');
+            var student=studentCollection.find({
+              _id:aaa
+            })[0];
+            $("#myModal .modal-body").text();
+            $("#myModal").modal('show');
           }else{
             console.log(123);
           }
+        }else{
+          var name = $($(this).find("td")[0]).text();
+          studentCollection.remove({
+            _id: name
+          });
+          studentCollection.save();
+          $(this).remove();
         }
       }
       function createString(id,name){
