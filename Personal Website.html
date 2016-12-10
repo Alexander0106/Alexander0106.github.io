@@ -92,12 +92,21 @@
           $(".modal-body").text();
           $("#myModal").modal('show');
         }else{
-          var name = $($(this).find("td")[0]).text();
-          studentCollection.remove({
-            _id: name
-          });
-          studentCollection.save();
-          $(this).remove();
+          if($(e.target).attr("class")!='js-change-button'){
+            var name = $($(this).find("td")[0]).text();
+            studentCollection.remove({
+              _id: name
+            });
+            studentCollection.save();
+            $(this).remove();
+          }else{
+            var name = $($(this).find("td")[0]).text();
+            studentCollection.remove({
+              _id: name
+            });
+            studentCollection.save();
+            $(this).remove();
+          }
         }
       }
       function createString(id,name){
