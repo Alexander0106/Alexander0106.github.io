@@ -48,7 +48,7 @@
         studentCollection.insert(newStudent);
         studentCollection.save();
         var student=studentCollection.find(newStudent)[0];
-        $("#students").append("<tr><td>"+student._id+"</td><td>"+student.name+"</td></tr>")
+        $("#students").append(createString(student._id,student.name))
       });
     </script>
     </p>
@@ -102,13 +102,16 @@
           $(this).remove();
         }
       }
+      function createString(id,name){
+        return "<tr data-id='"+_id+"'><td>"+_id+"</td><td>"+name+"</td><td><button class='js-delete-button'>Delete</button></td></tr>";
+      }
       $("#students").on("click","tr",showModal);
       setTimeout(function(){
         var students=studentCollection.find();
         for(var i=0;i<students.length;i++){
           var _id=students[i]._id;
           var name=students[i].name;
-          $("#students").append("<tr data-id='"+_id+"'><td>"+_id+"</td><td>"+name+"</td><td><button class='js-delete-button'>Delete</button></td></tr>")
+          $("#students").append(createString(_id,name))
         };
       },500);
     </script>
