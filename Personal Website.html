@@ -106,7 +106,7 @@
             var student=studentCollection.find({
               _id:aaa
             })[0];
-            $("#myModal .modal-body").html(123<br>456);
+            $("#myModal .modal-body").html("Age:"+aaa.age);
             $("#myModal").modal('show');
           }else{
             $("#change-modal").modal('show');
