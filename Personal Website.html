@@ -93,7 +93,6 @@
           $("#myModal").modal('show');
         }else{
           var name = $($(this).find("td")[0]).text();
-          console.log(name)
           studentCollection.remove({
             _id: name
           });
