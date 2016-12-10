@@ -28,7 +28,7 @@
     <button id="button">Submit</button>
     <script>
       $("#button").click(function(){
-        var newStudent={
+        var aaa={
           name:$("#name").val(),
           age:$("#age").val(),
           height:$("#height").val(),
@@ -44,10 +44,9 @@
         $("#occupation").val("");
         $("#telephone").val("");
         $("#email").val("");
-        console.log(newStudent);
-        studentCollection.insert(newStudent);
+        studentCollection.insert(aaa);
         studentCollection.save();
-        var student=studentCollection.find(newStudent)[0];
+        var student=studentCollection.find(aaa)[0];
         $("#students").append(createString(student._id,student.name))
       });
     </script>
