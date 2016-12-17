@@ -125,7 +125,7 @@
             $("#change-modal").modal('show');
             $("#change-button").click(function(){
               $(tr.find("td")[1]).text($("#change-name").val())
-              studentCollection.updateByID(student._id,{
+              studentCollection.updateById(student._id,{
                 name:$("#change-name").val(),
                 age:$("#change-age").val()
               });
