@@ -109,6 +109,7 @@
             $("#myModal .modal-body").html("Age: "+student.age+"<br>Height: "+student.height+"<br>Weight: "+student.weight+"<br>Occupation: "+student.occupation+"<br>Telephone: "+student.telephone+"<br>E-mail: "+student.email);
             $("#myModal").modal('show');
           }else{
+            var tr=$(this);
             var aaa=$(this).attr('data-id');
             var student=studentCollection.find({
               _id:aaa
