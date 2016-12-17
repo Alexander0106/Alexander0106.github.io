@@ -171,6 +171,11 @@
           }
         });
         $("#students tr").remove();
+        for(var i=0;i<students.length;i++){
+          var _id=students[i]._id;
+          var name=students[i].name;
+          $("#students").append(createString(_id,name))
+        };
       });
     </script>
   </body>
