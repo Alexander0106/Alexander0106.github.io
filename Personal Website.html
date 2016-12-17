@@ -164,7 +164,12 @@
         };
       },500);
       $("#search-button").click(function(){
-        alert($("#search-input").val());
+        var students=studentCollection.find({
+          age:{
+            $gt:$("#search-input").val()/1
+          }
+        });
+        console.log(students);
       });
     </script>
   </body>
