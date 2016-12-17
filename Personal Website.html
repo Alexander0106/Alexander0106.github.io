@@ -122,6 +122,15 @@
             $("#change-telephone").val(student.telephone);
             $("#change-email").val(student.email);
             $("#change-modal").modal('show');
+            $("#change-button").click(function(){
+              $(tr.find("td")[1]).text($("#change-name").val())
+              studentCollection.updateByID(student._id,{
+                name:$("#change-name").val(),
+                age:$("#change-age").val()
+              });
+              studentCollection.save();
+              $("#change-modal").modal('hide')
+            })
           }
         }else{
           var name = $($(this).find("td")[0]).text();
