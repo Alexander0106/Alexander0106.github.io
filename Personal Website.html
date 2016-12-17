@@ -127,7 +127,12 @@
               $(tr.find("td")[1]).text($("#change-name").val())
               studentCollection.updateById(student._id,{
                 name:$("#change-name").val(),
-                age:$("#change-age").val()
+                age:$("#change-age").val(),
+                height:$("#change-height").val(),
+                weight:$("#change-weight").val(),
+                occupation:$("#change-occupation").val(),
+                telephone:$("#change-telephone").val(),
+                email:$("#change-email").val(),
               });
               studentCollection.save();
               $("#change-modal").modal('hide')
