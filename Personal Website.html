@@ -28,7 +28,7 @@
     <button id="button">Submit</button>
     <br>
     <br>
-    <input id="search-input" type="text">
+    Age: Between <input id="search-input-less" type="text"> and <input id="search-input-greater" type="text"> 
     <button id="search-button">Search</button>
     <script>
       $("#button").click(function(){
@@ -166,7 +166,8 @@
       $("#search-button").click(function(){
         var students=studentCollection.find({
           age:{
-            $gt:$("#search-input").val()/1
+            $gte:$("#search-input-less").val()/1,
+            $lte:$("#search-input-greater").val()/1
           }
         });
         console.log(students);
