@@ -183,6 +183,23 @@
           $("#students tr").remove();
         }
       });
+      $("#search-button-name").click(function(){
+        if($("#search-input-name").val()!=""){
+          var students=studentCollection.find({
+            name:{
+              $in:[$("#search-input-name").val()]
+            }
+          });
+          $("#students tr").remove();
+          for(var i=0;i<students.length;i++){
+            var _id=students[i]._id;
+            var name=students[i].name;
+            $("#students").append(createString(_id,name))
+          };
+        }else{
+          $("#students tr").remove();
+        }
+      });
     </script>
   </body>
 </html>
