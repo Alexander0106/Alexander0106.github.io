@@ -28,8 +28,9 @@
     <button id="button">Submit</button>
     <br>
     <br>
+    Name: <input id="search-input-name" type="text"><button id="search-button-name">Search</button>
     Age: Between<input id="search-input-less" type="text">and<input id="search-input-greater" type="text">
-    <button id="search-button">Search</button>
+    <button id="search-button-age">Search</button>
     <script>
       $("#button").click(function(){
         var aaa={
@@ -163,7 +164,7 @@
           $("#students").append(createString(_id,name))
         };
       },500);
-      $("#search-button").click(function(){
+      $("#search-button-age").click(function(){
         if($("#search-input-less").val()!=""&&$("#search-input-greater").val()!=""){
           var students=studentCollection.find({
             age:{
