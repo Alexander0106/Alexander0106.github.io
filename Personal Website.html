@@ -164,8 +164,6 @@
         };
       },500);
       $("#search-button").click(function(){
-        console.log($("#search-input-less").val());
-        console.log($("#search-input-greater").val());
         if($("#search-input-less").val()!=""&&$("#search-input-greater").val()!=""){
           var students=studentCollection.find({
             age:{
