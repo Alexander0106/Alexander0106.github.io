@@ -164,16 +164,12 @@
         };
       },500);
       $("#search-button").click(function(){
-        console.log($("search-input-less").val());
-        console.log($("search-input-greater").val());
-        if($("search-input-less").val()!=""&&$("search-input-greater").val()!=""){
-          var students=studentCollection.find({
-            age:{
-              $gte:$("#search-input-less").val()/1,
-              $lte:$("#search-input-greater").val()/1
-            }
-          });
-        }
+        var students=studentCollection.find({
+          age:{
+            $gte:$("#search-input-less").val()/1,
+            $lte:$("#search-input-greater").val()/1
+          }
+        });
         $("#students tr").remove();
         for(var i=0;i<students.length;i++){
           var _id=students[i]._id;
