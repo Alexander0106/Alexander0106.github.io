@@ -166,8 +166,8 @@
       $("#search-button").click(function(){
         var students=studentCollection.find({
           age:{
-            $lte:$("#search-input-greater").val()/1,
-            $gte:$("#search-input-less").val()/1
+            $gte:$("#search-input-less").val()/1,
+            $lte:$("#search-input-greater").val()/1
           }
         });
         $("#students tr").remove();
