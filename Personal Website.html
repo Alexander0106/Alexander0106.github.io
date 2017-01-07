@@ -104,7 +104,9 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("mydb");
       var studentCollection = db.collection('students');
+      var parentCollection = db.collection('parents');
       studentCollection.load();
+      parentCollection.load();
       function showModal(e){
         if($(e.target).attr("class")!='js-delete-button'){
           if($(e.target).attr("class")!='js-change-button'){
