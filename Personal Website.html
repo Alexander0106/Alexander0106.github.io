@@ -120,7 +120,7 @@
             var student=studentCollection.find({
               _id:aaa
             })[0];
-            $("#myModal .modal-body").html("Age: "+student.age+"<br>Height: "+student.height+"<br>Weight: "+student.weight+"<br>Occupation: "+student.occupation+"<br>Telephone: "+student.telephone+"<br>E-mail: "+student.email);
+            $("#myModal .modal-body").html("Age: "+student.age+"<br>Height: "+student.height+"<br>Weight: "+student.weight+"<br>Occupation: "+student.occupation+"<br>Telephone: "+student.telephone+"<br>E-mail: "+student.email+"<br>Parent: "+student.parent);
             $("#myModal").modal('show');
           }else{
             var tr=$(this);
@@ -128,7 +128,7 @@
             var student=studentCollection.find({
               _id:aaa
             })[0];
-            $("#change-modal .modal-body").html("Name: <input id='change-name' type='text'></input><br>Age: <input id='change-age' type='text'></input><br>Height: <input id='change-height' type='text'></input><br>Weight: <input id='change-weight' type='text'></input><br>Occupation: <input id='change-occupation' type='text'></input><br>Telephone: <input id='change-telephone' type='text'></input><br>E-mail: <input id='change-email' type='text'></input><br>");
+            $("#change-modal .modal-body").html("Name: <input id='change-name' type='text'></input><br>Age: <input id='change-age' type='text'></input><br>Height: <input id='change-height' type='text'></input><br>Weight: <input id='change-weight' type='text'></input><br>Occupation: <input id='change-occupation' type='text'></input><br>Telephone: <input id='change-telephone' type='text'></input><br>E-mail: <input id='change-email' type='text'></input><br>Parent: <input id='change-parent' type='text'></input><br>");
             $("#change-name").val(student.name);
             $("#change-age").val(student.age);
             $("#change-height").val(student.height);
@@ -136,6 +136,7 @@
             $("#change-occupation").val(student.occupation);
             $("#change-telephone").val(student.telephone);
             $("#change-email").val(student.email);
+            $("#change-parent").val(student.parent);
             $("#change-modal").modal('show');
             $("#change-button").click(function(){
               $(tr.find("td")[1]).text($("#change-name").val())
@@ -147,6 +148,7 @@
                 occupation:$("#change-occupation").val(),
                 telephone:$("#change-telephone").val(),
                 email:$("#change-email").val(),
+                parent:$("#change-parent").val(),
               });
               studentCollection.save();
               $("#change-modal").modal('hide')
