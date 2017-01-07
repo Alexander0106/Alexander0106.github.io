@@ -170,6 +170,12 @@
           var name=students[i].name;
           $("#students").append(createString(_id,name))
         };
+        var parents=parentCollection.find();
+        for(var i=0;i<parents.length;i++){
+          var _id=parents[i]._id;
+          var name=parents[i].name;
+          $("#parent-id").append("<option value='"+_id+"'>"+name+"</option>")
+        };
       },500);
       $("#search-button-age").click(function(){
         if($("#search-input-less").val()!=""&&$("#search-input-greater").val()!=""){
