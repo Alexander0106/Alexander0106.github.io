@@ -45,7 +45,8 @@
           weight:$("#weight").val(),
           occupation:$("#occupation").val(),
           telephone:$("#telephone").val(),
-          email:$("#email").val()
+          email:$("#email").val(),
+          parent:$("#parent-id").val()
         };
         $("#name").val("");
         $("#age").val("");
@@ -54,6 +55,7 @@
         $("#occupation").val("");
         $("#telephone").val("");
         $("#email").val("");
+        $("#parent-id").val("");
         studentCollection.insert(aaa);
         studentCollection.save();
         var student=studentCollection.find(aaa)[0];
