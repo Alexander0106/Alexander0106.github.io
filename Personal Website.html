@@ -176,9 +176,8 @@
         };
         var parents=parentCollection.find();
         for(var i=0;i<parents.length;i++){
-          var _id=parents[i]._id;
           var name=parents[i].name;
-          $("#parent-id").append("<option value='"+_id+"'>"+name+"</option>")
+          $("#parent-id").append("<option value='"+name+"'>"+name+"</option>")
         };
       },500);
       $("#search-button-age").click(function(){
