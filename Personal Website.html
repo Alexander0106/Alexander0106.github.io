@@ -128,7 +128,12 @@
             var student=studentCollection.find({
               _id:aaa
             })[0];
-            $("#change-modal .modal-body").html("Name: <input id='change-name' type='text'></input><br>Age: <input id='change-age' type='text'></input><br>Height: <input id='change-height' type='text'></input><br>Weight: <input id='change-weight' type='text'></input><br>Occupation: <input id='change-occupation' type='text'></input><br>Telephone: <input id='change-telephone' type='text'></input><br>E-mail: <input id='change-email' type='text'></input><br>Parent: <input id='change-parent' type='text'></input><br>");
+            $("#change-modal .modal-body").html("Name: <input id='change-name' type='text'></input><br>Age: <input id='change-age' type='text'></input><br>Height: <input id='change-height' type='text'></input><br>Weight: <input id='change-weight' type='text'></input><br>Occupation: <input id='change-occupation' type='text'></input><br>Telephone: <input id='change-telephone' type='text'></input><br>E-mail: <input id='change-email' type='text'></input><br>Parent: <select id='change-parent'></select>");
+            var parents=parentCollection.find();
+            for(var i=0;i<parents.length;i++){
+              var name=parents[i].name;
+              $("#change-parent").append("<option value='"+name+"'>"+name+"</option>")
+            };
             $("#change-name").val(student.name);
             $("#change-age").val(student.age);
             $("#change-height").val(student.height);
